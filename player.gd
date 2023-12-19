@@ -1,8 +1,7 @@
-extends Node2D
+extends Area2D
 
 
 @export var speed = 400.0
-
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -24,5 +23,5 @@ func _process(delta):
 	position += velocity * delta
 
 
-
-
+func _on_body_entered(body):
+	hide()

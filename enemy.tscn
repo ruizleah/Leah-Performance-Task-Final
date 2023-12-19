@@ -1,10 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://b7cvsh8wq0neo"]
+[gd_scene load_steps=3 format=3 uid="uid://u38umsqwou2w"]
 
 [ext_resource type="Texture2D" uid="uid://clwpo83yorvtm" path="res://assets/enemy.png" id="1_faulh"]
 
-[node name="enemy" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y85pm"]
+size = Vector2(641, 974.75)
+
+[node name="RigidBody2D" type="RigidBody2D"]
+position = Vector2(255, 84)
+gravity_scale = 2.66454e-15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 5.375)
+shape = SubResource("RectangleShape2D_y85pm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(177, 220)
-scale = Vector2(0.447837, 0.430678)
 texture = ExtResource("1_faulh")
