@@ -2,6 +2,8 @@ extends Area2D
 
 
 @export var speed = 400.0
+@onready var enemy_hit = $"../enemy hit"
+@onready var bg_music = $"../bg music"
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -25,3 +27,5 @@ func _process(delta):
 
 func _on_body_entered(body):
 	hide()
+	enemy_hit.play()
+	bg_music.stop()
