@@ -4,17 +4,20 @@
 [ext_resource type="Script" path="res://player.gd" id="1_ag3f1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qmmlf"]
-radius = 156.707
+radius = 126.254
 
 [node name="player" type="Node2D"]
 script = ExtResource("1_ag3f1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-36.75, -33)
+scale = Vector2(0.808094, 0.816667)
 texture = ExtResource("1_262qm")
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-position = Vector2(-1, 2)
-gravity_scale = 2.66454e-15
+[node name="Area2D" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-40, -30)
 shape = SubResource("CircleShape2D_qmmlf")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
