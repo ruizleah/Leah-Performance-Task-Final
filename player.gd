@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var velocity
 @export var speed = 400.0
 @onready var area_2d = $Area2D
 @onready var collision_shape_2d = $Area2D/CollisionShape2D
@@ -11,11 +12,21 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	velocity = Vector2.ZERO
+	
+	if Input.is_action_just_pressed("left"):
+		velocity.y -= 1
+	if Input.is_action_just_pressed("down"):
+		velocity.y -= 1
+	if Input.is_action_just_pressed("right"):
+		velocity.y += 1
+	if Input.is_action_just_pressed("up"):
+		velocity.y += 1
+	
+	velocity 
 	
 
 
 
-func _on_area_2d_body_entered(body):
-	pass # Replace with function body.
-	
+
+
